@@ -59,11 +59,8 @@ const Update=asyncHandler(async (req,res)=>{
        const result=await Data.updateOne({_id:new mongodb.ObjectId(req.params.id)},{$set:req.body});
        if(result)
        {
-        res.status(201).json({
-            _id:result._id,
-            shopname:result.shopname,
-            address:result.address,
-        })
+        res.status(201);
+         res.send(""Field Updated);
        }    
     } 
     catch (error) {
